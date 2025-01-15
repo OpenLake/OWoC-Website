@@ -25,42 +25,44 @@ export default function Blog({ allPosts }) {
         ? allPosts
         : allPosts.filter(post => new Date(post.date).getFullYear() === parseInt(selectedYear));
 
-    return (
-        <>
-			<Head>
-				<title>Blog | FOSS Overflow</title>
-			</Head>
-			<div className='max-w-screen-md m-auto cursor-pointer'>
+    return (<>
+        <Head>
+            <title>Blog | FOSS Overflow</title>
+        </Head>
+        <div className='max-w-screen-md m-auto cursor-pointer'>
 
-            <div className="flex gap-4">
-                {uniqueYears.map(year => (
-                    <button
-                        key={year}
-                        onClick={() => setSelectedYear(year)}
-                        className={`p-2 rounded-lg w-48 my-5 ${
-                            year === selectedYear ? 'bg-blue-75 text-white' : 'bg-gray-200'
-                        }`}
-                    >
-                        {year}
-                    </button>
-                ))}
-            </div>
+        <div className="flex gap-4">
+            {uniqueYears.map(year => (
+                <button
+                    key={year}
+                    onClick={() => setSelectedYear(year)}
+                    className={`p-2 rounded-lg w-48 my-5 ${
+                        year === selectedYear ? 'bg-blue-75 text-white' : 'bg-gray-200'
+                    }`}
+                >
+                    {year}
+                </button>
+            ))}
+        </div>
 
-            <ul className="flex flex-col gap-4">
-                {filteredPosts.map(post => (
-                    <li key={post.slug}>
-                        <Link href="/blog/2021/[slug]" as={`/blog/2021/${post.slug}`} passHref>
-                            <a className="block shadow-sm bg-white p-4 rounded-lg text-xl">
-                                {post.title}
-                                <div className="text-gray-500 text-base">
-                                    by {post.author} - {displayDate(post.date)}
-                                </div>
-                            </a>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-			</div>
-        </>
-    );
+        <ul className="flex flex-col gap-4">
+            {filteredPosts.map(post => (
+                <li key={post.slug}>
+                    <Link
+                        href="/blog/2021/[slug]"
+                        as={`/blog/2021/${post.slug}`}
+                        passHref
+                        className="block shadow-sm bg-white p-4 rounded-lg text-xl">
+
+                        {post.title}
+                        <div className="text-gray-500 text-base">
+                            by {post.author} - {displayDate(post.date)}
+                        </div>
+
+                    </Link>
+                </li>
+            ))}
+        </ul>
+        </div>
+    </>);
 }
