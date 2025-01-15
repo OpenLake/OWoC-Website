@@ -16,10 +16,10 @@ export const ActiveLink = ({ children, activeClassName, ...props }) => {
 			: childClassName;
 
 	return (
-		<Link {...props}>
-			{React.cloneElement(child, {
+        (<Link {...props} legacyBehavior>
+            {React.cloneElement(child, {
 				className: className || null,
 			})}
-		</Link>
-	);
+        </Link>)
+    );
 };

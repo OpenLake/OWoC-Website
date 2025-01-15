@@ -12,31 +12,31 @@ function NavLink() {
 	};
 
 	return (
-		<nav className={`${styles.navbar} z-50`}>
-			<div className={styles.navbar__left}>
-				<Link href="/">
-					<a className={styles.navbar__logo}>
-						<Image src={logo} height={60} width={140} alt="Logo Navigation" />
-					</a>
-				</Link>
+        (<nav className={`${styles.navbar} z-50`}>
+            <div className={styles.navbar__left}>
+				<Link href="/" className={styles.navbar__logo}>
+
+                    <Image src={logo} height={60} width={140} alt="Logo Navigation" />
+
+                </Link>
 			</div>
-			<div className={styles.navbar__right}>
+            <div className={styles.navbar__right}>
 				<div
 					className={`${styles.navbar__menu} ${
 						isMobileMenuOpen ? styles.open : ''
 					}`}
 				>
-					<Link href="/projects">
-						<a className={styles.navbar__link}>Projects</a>
+					<Link href="/projects" className={styles.navbar__link}>
+						Projects
 					</Link>
-					<Link href="/apply">
-						<a className={styles.navbar__link}>Apply</a>
+					<Link href="/apply" className={styles.navbar__link}>
+						Apply
 					</Link>
-					<Link href="/blog">
-						<a className={styles.navbar__link}>Archives</a>
+					<Link href="/blog" className={styles.navbar__link}>
+						Archives
 					</Link>
-					<Link href="/speakers">
-						<a className={styles.navbar__link}>Speakers</a>
+					<Link href="/speakers" className={styles.navbar__link}>
+						Speakers
 					</Link>
 				</div>
 				<div className={styles.navbar__mobilemenu} onClick={toggleMobileMenu}>
@@ -50,8 +50,8 @@ function NavLink() {
 					<div className={styles.ham_bar}></div>
 				</div>
 			</div>
-		</nav>
-	);
+        </nav>)
+    );
 }
 
 export default NavLink;
