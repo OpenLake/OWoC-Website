@@ -1,7 +1,7 @@
 ---
-Title: 'DocDelivery'
-Author: 'Shivam Verma'
-Date: '17-01-2023'
+title: 'DocDelivery'
+author: 'Shivam Verma'
+date: '2023-01-17'
 ---
 
 ## Introduction
