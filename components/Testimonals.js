@@ -7,7 +7,7 @@ const PreviousBtn = props => {
 	const { className, onClick } = props;
 	return (
 		<div className={className} onClick={onClick}>
-			<ArrowBackIos style={{ color: 'gray', fontSize: '45px' }} />
+			{/* <ArrowBackIos style={{ color: 'gray', fontSize: '45px' }} /> */}
 		</div>
 	);
 };
@@ -15,7 +15,7 @@ const NextBtn = props => {
 	const { className, onClick } = props;
 	return (
 		<div className={className} onClick={onClick}>
-			<ArrowForwardIos style={{ color: 'gray', fontSize: '45px' }} />
+			{/* <ArrowForwardIos style={{ color: 'gray', fontSize: '45px' }} /> */}
 		</div>
 	);
 };
@@ -24,7 +24,12 @@ const Testimonial = () => {
 	return (
 		<div
 			className={styles.testimonial}
-			style={{ display: 'flex', justifyContent: 'center', marginTop: 50 , marginBottom: 25}}
+			style={{
+				display: 'flex',
+				justifyContent: 'center',
+				marginTop: 50,
+				marginBottom: 25,
+			}}
 		>
 			<div style={{ width: '50%', textAlign: 'center' }}>
 				<h1 className="texthead leading-relaxed font-[600] mb-10 ">
@@ -33,21 +38,21 @@ const Testimonial = () => {
 						Speakers
 					</span>
 				</h1>
-				<Slider autoplay={true} prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
+				<Slider
+					autoplay={true}
+					prevArrow={<PreviousBtn />}
+					nextArrow={<NextBtn />}
+					dots
+				>
 					<Card
-						img="https://i.ibb.co/KWcfBw0/harsh.jpg"
+						img="./madhur.jpg"
 						message="Open platforms historically undergo a lot of scrutiny, but there are a lot of advantages to having an open source platform from a security standpoint."
-						author="Harsh Mishra, Open Soure Engineer @LocalStack"
+						author="Madhur Jain, Software Engineer @Canonical"
 					/>
 					<Card
-						img="https://i.ibb.co/wWJ0RSc/speaker2.jpg"
+						img="./Riken.jpg"
 						message="The open source nature of the Internet is both a blessing and a curse, because just as much as we can watch what's happening around the world, we can also be watched."
-						author="Sonal Goyal, Founder @Zingg.AI"
-					/>
-					<Card
-						img="https://i.ibb.co/z2P4k4J/speaker3.jpg"
-						message="Empowerment of individuals is a key part of what makes open source work, since in the end, innovations tend to come from small groups, not from large, structured efforts."
-						author="Chinmay Naik, Founder @One2N"
+						author="Riken Shah, Software Engineer @Msquare Labs"
 					/>
 				</Slider>
 			</div>
